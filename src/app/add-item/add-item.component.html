@@ -1,0 +1,109 @@
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+
+              <a routerLink="/contactUs" class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Add Item to Menu</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/addItem">Add Item</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<br><br>
+<form (ngSubmit)="onSubmit()">
+<div class="row align-items-center contact-information">
+  <!-- <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/shop.png" alt="Card image cap"><font>Welcome,<br> On-boarding New Items</font></p> -->
+  <div class="table-responsive panel">
+    <h1><p style="text-align: center;">Welcome, Add new item to your Menu<br></p></h1>
+
+    <table class="table">
+      <tbody>
+      <tr>
+        <td></td>
+        <td><div class="container" style="height: 75px;">
+          <div *ngIf="present==false" class="alert alert-danger alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Not Unique!</strong>
+          </div>
+          <div *ngIf="present" class="alert alert-success alert-box" align="center" style="width: 60%; margin: auto;">
+            <strong>Item ID Unique</strong>
+          </div>
+        </div></td>
+        <td></td>
+      </tr>
+      <tr>
+        
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user"></i> Item Id</h4></td>
+        <td><h4><input placeholder="Item Id" type="text" minlength="3" maxlength="3"
+                   [(ngModel)]="newFoodItems.id" name="id" required></h4></td>
+        <td><button style="position: absolute; left: 55%; padding: 5px 10px;" type="button" class="btn custom-btn" (click)="checkAvailability()"><span>Check Availability</span></button></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user-circle"></i> Item Name</h4></td>
+        <td><h4><input placeholder="Item Name" type="text" minlength="2" maxlength="20"
+                   [(ngModel)]="newFoodItems.name" name="name" required></h4></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-mobile"></i> Price (INR)</h4></td>
+        <td><h4><input placeholder="Price" type="number"
+                   name="price" [(ngModel)]="newFoodItems.price" required min="0"></h4></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> Available Quantity</h4></td>
+        <td><h4><input placeholder="Available Quantity" type="number"
+                   name="quantity" [(ngModel)]="newFoodItems.quantityAvailable" required min="0"></h4></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> Food Image</h4></td>
+        <td><h4><input type="file" (change)="onFileSelected($event)"></h4></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> OR</h4></td>
+        <td></td>
+        <td></td>
+      </tr>
+
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> Food Image URL</h4></td>
+        <td><h4><input type="text" placeholder="Paste The Url" name="fileDataF" [(ngModel)]="newFoodItems.fileDataF"></h4></td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center">
+  <button style="margin: 10px;" class="btn custom-btn" routerLink="/merchantMenu"><span>Menu</span></button>
+  <button class="btn custom-btn" type="submit"><span>AddItem</span></button>
+</div>
+</form>

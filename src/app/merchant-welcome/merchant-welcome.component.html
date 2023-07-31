@@ -1,0 +1,70 @@
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+
+              <a routerLink="/contactUs" class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Merchant Home</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/merchantWelcome">Merchant</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+ 
+
+<div class="row align-items-center contact-information">
+  <!-- <p><img class="card-img-top" style="padding: 0 15px; float: left;" src="../../assets/images/merchant.png" alt="Card image cap"><font style="float: left">Welcome, {{modelMerchant.firstname}}<br> Account Type : Merchant</font></p> -->
+  <div class="table-responsive panel">
+    <h1><p style="text-align: center;">Welcome, {{modelMerchant.firstname}}<br></p></h1>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user"></i> First Name</h4></td>
+          <td><h4>{{modelMerchant.firstname}}</h4></td>
+        </tr>
+        <tr>
+          <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user-circle"></i> Last Name</h4></td>
+          <td><h4>{{modelMerchant.lastname}}</h4></td>
+        </tr>
+        <tr>
+          <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-mobile"></i> Mobile Number</h4></td>
+          <td><h4>{{modelMerchant.phone}}</h4></td>
+        </tr>
+        <tr>
+          <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> E-Mail ID</h4></td>
+          <td><h4>{{modelMerchant.email}}</h4></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center">
+  <button class="btn custom-btn" routerLink="/merchantMenu"><span>Alter Menu</span></button>
+  </div>
+
+
+

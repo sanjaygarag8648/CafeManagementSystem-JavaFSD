@@ -1,0 +1,97 @@
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+
+              <a routerLink="/contactUs" class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Payment Page</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/checkout">Payment</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+  <div>
+    <h2 align="center">Payment Details</h2>
+    <h2 align="center">To Pay : {{total}}</h2>
+    <div align="center">
+      <table align="center">
+        <tr>
+          <td><h4 style=" color: #719a0a;">Card Number</h4></td>
+          <td><h5><input type="text" placeholder="xxxx xxxx xxxx xxxx"
+                      minlength="16"
+                      maxlength="16"
+                      [(ngModel)]="cardNumber"
+                      required="required"
+                      (keyup)="validCard()">
+                    </h5>
+          </td>
+        </tr>
+        <tr>
+          <td><h4 style=" color: #719a0a; font-family: 'Nunito', sans-serif;">Expiry</h4></td>
+          <td><h5>
+            <table>
+              <tr>
+                <td style="min-width: 90px"><input type="number" placeholder="MM" min="1" max="12" required="required" [(ngModel)]="month" (keyup)="validMonth()"></td>
+                <td style="min-width: 90px"><input type="number" placeholder="YY" min="19" max="99" required="required" [(ngModel)]="year" (keyup)="validYear()"></td>
+              </tr>
+            </table>
+          </h5>
+          </td>
+        </tr>
+        <tr>
+          <td><h4 style=" color: #719a0a; font-family: 'Nunito', sans-serif;">CVV</h4></td>
+          <td>
+            <h5>
+            <table>
+              <tr>
+                <td style="min-width: 90px"><input type="number" placeholder="CVV" min="100" max="999" required="required" [(ngModel)]="cvv" (keyup)="validCvv()"></td>
+                
+              </tr>
+            </table>
+          </h5>
+          </td>
+        </tr>
+        <tr>
+          <td><h4 style=" color: #719a0a; font-family: 'Nunito', sans-serif;" >Cardholder Name</h4></td>
+          <td><h5><input type="text" placeholder="Name" required="required" minlength="4" maxlength="10" [(ngModel)]="nameOnCard" (keyup)="validName()"></h5></td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <button class="btn custom-btn" routerLink="/success" (click)="changeDB()" style="margin: 10px;"><span>Pay</span></button>
+          </td>
+          <td>
+            <button class="btn custom-btn" routerLink="/menu"><span>Go Back</span></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+

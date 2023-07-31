@@ -1,0 +1,112 @@
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+             
+              <a routerLink="/merchantMenu" class="nav-item nav-link active">Menu</a>
+              
+              <a routerLink="/contactUs" class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Update Food Menu</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/merchantMenu">Menu</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+
+<!--
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+    <table align="center">
+      <tr>
+        <td *ngFor="let m of model">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top zoom" src="{{m.url}}" alt="Card image cap" style="height: 190px">
+            <div class="card-body">
+              <h5 class="card-title" style="color: black">{{m.item}}</h5>
+              <p class="card-text">Price : Rs.{{m.price}}</p>
+              <p> Quantity Available : {{m.quantity}}</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
+        </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity2" name="quantity2" min="0" max="{{model[1].quantity}}" [(ngModel)]="modalCart.quantity2">
+        </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity3" name="quantity3" min="0" max="{{model[2].quantity}}" [(ngModel)]="modalCart.quantity3">
+        </td>
+      </tr>
+    </table>
+    <br><br>
+    <table align="center">
+      <tr>
+        <td>
+          <button class="bigbutton" routerLink="/addItem"><span>Add Item</span></button>
+        </td>
+        <td>
+          <button type="submit" class="bigbutton"><span>Update Quantity</span></button>
+        </td>
+        <td>
+          <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+-->
+
+<br><br>
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+  <div class="container-fluid" style="margin: 0 auto; width: 75%;">
+    <div class="row">
+      <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
+        <div class="card" style="width: 18rem;">
+          <!--<img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">-->
+          <img class="card-img-top zoom" [src]="_DomSanitizationService.bypassSecurityTrustUrl(m.url)" style="height: 190px"/>
+          <div class="card-block">
+            <div class="card-body">
+              <h5 class="card-title" style="color: black">{{m.item}}</h5>
+              <p class="card-text">Price : Rs.{{m.price}}</p>
+              <p> Quantity Available : {{m.quantity}}</p>
+            </div>
+          </div>
+        </div>
+        <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container" align="center">
+    <button class="btn custom-btn" routerLink="/addItem" style="margin: 10px;"><span>Add Item</span></button>
+    <button type="submit" class="btn custom-btn" style="margin: 10px;"><span>Update Quantity</span></button>
+    
+  </div>
+</form>
+

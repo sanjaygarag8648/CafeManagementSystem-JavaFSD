@@ -1,0 +1,174 @@
+<!--<div class="body">
+  <br><br><br>
+  <h1 align="center">XWIGGY | HOME</h1>
+  <br><br>
+
+  <h1>Welcome, {{modelUser.firstname}}</h1>
+  <div class="alert alert-warning" align="center">
+    <strong>User Details</strong>
+  </div>
+
+<table cellpadding="30%" align="center" >
+  <tr>
+    <td>First Name</td>
+    <td>{{modelUser.firstname}}</td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td>{{modelUser.lastname}}</td>
+  </tr>
+  <tr>
+    <td>Mobile Number</td>
+    <td>{{modelUser.phone}}</td>
+  </tr>
+  <tr>
+    <td>Email Id</td>
+    <td>{{modelUser.email}}</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td><button class="bigbutton" routerLink="/home" (click)="clearLocal()"><span>Log Out</span></button></td>
+    <td><button class="bigbutton" routerLink="/menu"><span>Menu</span></button></td>
+
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td> </td>
+
+  </tr>
+</table>
+</div>-->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+              <a routerLink="/about" class="nav-item nav-link">About</a>
+                          
+              <a routerLink="/contactUs" class="nav-item nav-link">Contact</a>
+              <a class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Customer Home</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/welcome">User</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+
+
+<div class="row align-items-center contact-information">
+ 
+  <div class="table-responsive panel">
+    <h1><p style="text-align: center;">Welcome, {{modelUser.firstname}}<br></p></h1>
+    <table class="table">
+      <tbody>
+
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user"></i> First Name</h4></td>
+        <td><h4>{{modelUser.firstname}}</h4></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-user-circle"></i> Last Name</h4></td>
+        <td><h4>{{modelUser.lastname}}</h4></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-mobile"></i> Mobile Number</h4></td>
+        <td><h4>{{modelUser.phone}}</h4></td>
+      </tr>
+      <tr>
+        <td class="text-success" align="right"><h4 style=" color: #719a0a;"><i class="fa fa-envelope"></i> E-Mail ID</h4></td>
+        <td><h4>{{modelUser.email}}</h4></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="container" align="center">
+<button class="btn custom-btn" routerLink="/menu"><span>Menu</span></button>
+</div>
+
+<div class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-7">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="footer-contact">
+                          <h2>Our Address</h2>
+                          <p><i class="fas fa-map-marker-alt"></i>123 Street, Bengaluru, Karnataka, India</p>
+                          <p><i class="fas fa-phone-alt"></i>+012 345 67890</p>
+                          <p><i class="fa fa-envelope"></i>bengaluruecafe@gmail.com</p>
+                          <p>DON'T BE ANTI-SOCIAL<br>
+                          <i>Join in with the conversation</i></p>
+                          <div class="footer-social">
+                              <a href=""><i class="fab fa-twitter"></i></a>
+                              <a href="https://www.facebook.com/therameshwaramcafe/"><i class="fab fa-facebook-f"></i></a>
+                              <a href="https://www.youtube.com/watch?v=1xbmyNO9aQ0"><i class="fab fa-youtube"></i></a>
+                              <a href=""><i class="fab fa-instagram"></i></a>
+                              <a href=""><i class="fab fa-linkedin-in"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="footer-link">
+                          <h2>Quick Links</h2>
+                          <a href="">Terms of use</a>
+                          <a href="">Privacy policy</a>
+                          <a href="">Cookies</a>
+                          <a href="">Help</a>
+                          <a href="">FQAs</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-5">
+              <div class="footer-newsletter">
+                  <h2>Newsletter</h2>
+                  <p>
+                    Never miss an update from us!
+                    We will be in touch regularly with upto date news, offers and much more.<br>
+                    In the meantime, find out more about us and explore Bengaluru e-CAFE  
+                  <div class="form">
+                      <input class="form-control" placeholder="Email goes here">
+                      <button class="btn custom-btn">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="copyright">
+      <div class="container">
+          <p>Copyright &copy; <a href="#">Bengaluru_e-CAFE</a>, All Right Reserved.</p>
+          
+      </div>
+  </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

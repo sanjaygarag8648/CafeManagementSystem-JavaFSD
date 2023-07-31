@@ -1,0 +1,74 @@
+<html>
+<head></head>
+
+<body>
+<br>
+  <div class="navbar navbar-expand-lg bg-light navbar-light">
+    <div class="container-fluid">
+        <a routerLink="/home" class="navbar-brand" style="text-shadow: 2px 1px #666666;"> Bengaluru <span>e-CAFE</span></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+  </div>
+
+<div class="loginbody">
+<br><br><br><br><br>
+<H1 align="center" style="color: #fbaf32; text-shadow: 2px 1px #454545;"><b>Log-In</b></H1>
+<br><br>
+<div align="center" style="color: #f44336">{{message}}</div>
+<div class="container" align="center">
+  <div class="row">
+    <div class="offset-3"></div>
+    <div class="col-md-6">
+      <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && sendFeedback()" novalidate class="feedback-form">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text"
+                 id="username"
+                 class="form-control"
+                 name="username"
+                 placeholder="Username"
+                 [(ngModel)]="model.username"
+                 #username="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
+                 required/>
+          <!-- input validation group -->
+          <div *ngIf="f.submitted && username.invalid" class="invalid-input">
+            <!-- individual validation errors -->
+            <div *ngIf="username.errors?.required">Field is required</div>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password"
+                 id="password"
+                 class="form-control"
+                 name="password"
+                 placeholder="Password"
+                 [(ngModel)]="model.password"
+                 #password="ngModel"
+                 [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+                 required="required"/>
+          <!-- input validation group -->
+          <div *ngIf="f.submitted && password.invalid" class="invalid-input">
+            <!-- individual validation errors -->
+            <div *ngIf="password.errors?.required">Field is required</div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn custom-btn" style="margin: 10px;">
+          <span> Login</span>
+        </button>
+        <button class="btn custom-btn" style="margin: 10px;" routerLink="/register"><span>Register</span></button>
+      </form>
+    </div>
+    <div class="offset-3"></div>
+  </div>
+</div>
+</div>
+</body>
+</html>

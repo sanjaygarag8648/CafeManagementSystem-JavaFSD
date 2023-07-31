@@ -1,0 +1,73 @@
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+              <a class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Your Orders</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/welcome">User</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+
+<div class="body">
+  <br><br><br>
+  <div  align="center" style="width: 100%; background-color: blanchedalmond;">
+    <strong><h3 style=" color: #719a0a;">Payment Successful</h3></strong>
+  </div>
+  <br><br>
+  <h1 align="center">Your order is on it's way.</h1>
+  <!--<div align="center"><progress value="22" max="100" style="width: 70%"> Progress</progress> </div>-->
+
+<div align="center" >
+  <div class="progress" style="height: 50%;">
+    <div class="progress-bar bg-success" style="width:40%;">
+      <h4>Payment Status : Accepted</h4>
+    </div>
+    <div class="progress-bar bg-warning" style="width:40%">
+      <h4>Order Status : Accepted</h4>
+    </div>
+    <div class="progress-bar bg-danger" style="width:40%">
+      <h4>Delivery Time : 30 mins</h4>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<div  align="center" style="width: 100%;">
+  <strong><h3 style=" color: #719a0a;">Thank You</h3></strong>
+</div>
+  <br><br><br>
+  <table align="center">
+    <tr>
+      <td><button class="btn custom-btn" routerLink="/contactUs" style="width: 140px; margin: 10px;"><span>Contact Us</span></button> </td>
+      <td><button class="btn custom-btn" routerLink="/menu" style="margin: 10px;"><span>Menu</span></button> </td>
+    </tr>
+  </table>
+</div>
+
+

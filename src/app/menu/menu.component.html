@@ -1,0 +1,200 @@
+
+<!--<div class="container-fluid">
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+    <table align="center">
+      <tr>
+        <td *ngFor="let m of model">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top zoom" src="{{m.url}}" alt="Card image cap" style="height: 190px">
+            <div class="card-body">
+              <h5 class="card-title" style="color: black">{{m.item}}</h5>
+              <p class="card-text">Price : Rs.{{m.price}}</p>
+              <p> Quantity Available : {{m.quantity}}</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        &lt;!&ndash;<ng-container *ngFor="let vale of values; let index=index;">
+        <td>
+          <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+        </td>
+        </ng-container>&ndash;&gt;
+        <td>
+        <input class="input-group-text input-align" type="number" id="quantity1" name="quantity1" min="0" max="{{model[0].quantity}}" [(ngModel)]="modalCart.quantity1">
+      </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity2" name="quantity2" min="0" max="{{model[1].quantity}}" [(ngModel)]="modalCart.quantity2">
+        </td>
+        <td>
+          <input class="input-group-text input-align" type="number" id="quantity3" name="quantity3" min="0" max="{{model[2].quantity}}" [(ngModel)]="modalCart.quantity3">
+        </td>
+      </tr>
+    </table>
+    <br><br>
+    <div class="total" style="text-align: center; font-size: large">
+      Cart Total : {{total}}
+    </div>
+    <table align="center">
+      <tr>
+        <td>
+          <input type="submit" class="bigbutton" value="Add To Cart">
+        </td>
+        <td>
+          <button routerLink="/checkout" class="bigbutton"><span>Buy</span></button>
+        </td>
+        <td>
+          <button routerLink="/home" type="button" class="bigbutton" (click)="clearLocal()"><span>Log Out</span></button>
+        </td>
+      </tr>
+    </table>
+
+  </form>
+</div>
+
+</div>-->
+
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+<!--************************************************-->
+<!-- Nav Bar Start -->
+<div class="navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container-fluid">
+      <a routerLink="/home" class="navbar-brand">Bengaluru <span>e-CAFE</span></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+              <a routerLink="/home" class="nav-item nav-link">Home</a>
+              <a routerLink="/about" class="nav-item nav-link">About</a>
+             
+              <a routerLink="/menu" class="nav-item nav-link active">Menu</a>
+              
+              <a routerLink="/contactUs" class="nav-item nav-link">Contact</a>
+              <a routerLink="/contactUs" class="nav-item nav-link active" routerLink="/home" (click)="clearLocal()">LogOut</a>
+
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Nav Bar End -->
+
+
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Food Menu</h2>
+          </div>
+          <div class="col-12">
+              <a routerLink="/home">Home</a>
+              <a routerLink="/menu">Menu</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+
+<br><br>
+<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && getTotal()" novalidate class="feedback-form">
+<div class="container-fluid" style="margin: 0 auto; width: 75%;">
+  <div class="row">
+    <div class="card-deck" *ngFor="let m of model; let index=index" style="padding-right: 3px">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top zoom" src="{{m.url}}" alt="{{m.item}}"  style="height: 190px">
+        <div class="card-block">
+          <div class="card-body">
+            <h5 class="card-title" style="color: black">{{m.item}}</h5>
+            <p class="card-text">Price : Rs.{{m.price}}</p>
+            <p> Quantity Available : {{m.quantity}}</p>
+          </div>
+        </div>
+      </div>
+      <input class="input-group-text input-align" type="number" name="name+{{index}}" min="0" max="{{model[index].quantity}}" value="{{values[index].quantity}}" [(ngModel)]="values[index].quantity">
+    </div>
+  </div>
+</div>
+
+
+<br><br>
+<div class="total" style="text-align: center; font-size: large">
+  Cart Total : {{total}}
+</div>
+<table align="center">
+  <tr>
+    <td>
+      <input type="submit" class="btn custom-btn" value="Add To Cart" style="margin: 10px;">
+    </td>
+    <td>
+      <button routerLink="/checkout" class="btn custom-btn"><span>Buy</span></button>
+    </td>
+  </tr>
+</table>
+</form>
+
+
+
+<!-- Footer Start -->
+<div class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-7">
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="footer-contact">
+                          <h2>Our Address</h2>
+                          <p><i class="fas fa-map-marker-alt"></i>123 Street, Bengaluru, Karnataka, India</p>
+                          <p><i class="fas fa-phone-alt"></i>+012 345 67890</p>
+                          <p><i class="fa fa-envelope"></i>bengaluruecafe@gmail.com</p>
+                          <p>DON'T BE ANTI-SOCIAL<br>
+                          <i>Join in with the conversation</i></p>
+                          <div class="footer-social">
+                              <a href=""><i class="fab fa-twitter"></i></a>
+                              <a href="https://www.facebook.com/therameshwaramcafe/"><i class="fab fa-facebook-f"></i></a>
+                              <a href="https://www.youtube.com/watch?v=1xbmyNO9aQ0"><i class="fab fa-youtube"></i></a>
+                              <a href=""><i class="fab fa-instagram"></i></a>
+                              <a href=""><i class="fab fa-linkedin-in"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="footer-link">
+                          <h2>Quick Links</h2>
+                          <a href="">Terms of use</a>
+                          <a href="">Privacy policy</a>
+                          <a href="">Cookies</a>
+                          <a href="">Help</a>
+                          <a href="">FQAs</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-5">
+              <div class="footer-newsletter">
+                  <h2>Newsletter</h2>
+                  <p>
+                    Never miss an update from us!
+                    We will be in touch regularly with upto date news, offers and much more.<br>
+                    In the meantime, find out more about us and explore Bengaluru e-CAFE  
+                  <div class="form">
+                      <input class="form-control" placeholder="Email goes here">
+                      <button class="btn custom-btn">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="copyright">
+      <div class="container">
+          <p>Copyright &copy; <a href="#">Bengaluru_e-CAFE</a>, All Right Reserved.</p>
+          
+      </div>
+  </div>
+</div>
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
